@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- More info on nuget msbuild properties: https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets -->
+  <PropertyGroup>
+    <!-- 
+      Setting PackageType to Template enables displaying the command to install the tool on nuget.org
+    -->
+    <PackageType>Template</PackageType>
+    <!-- Update this as needed -->
+    <PackageVersion>0.0.1</PackageVersion>
+    <PackageId>sample.templates.package</PackageId>
+    <Title>SampleTemplatesPackage</Title>
+    <Authors>Kay Blasms</Authors>
+    <Description>All your packages are belong to us.</Description>
+    <!-- 
+      To embed a README that will be displayed on nuget.org, uncomment the following line and the secton below.
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+     -->
+    <!-- Leave these tags, but feel free to add some more here -->
+    <PackageTags>dotnet-new;templates</PackageTags>
+    <!-- Typically this doesn't need to be modified -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- 
+      Update license expression as needed.
+      See https://docs.microsoft.com/en-us/nuget/nuget-org/licenses.nuget.org#license-expressions      
+    -->
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <!-- 
+      This is needed to avoid a needless warning because we are packaing templates, not binaries      
+    -->
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 
+      To embed a README that will be displayed on nuget.org, uncomment the following line and update the path to the file
+      <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    -->
+    <!-- If you're not using the embedded README.md remove the following line -->
+
+    <!-- include content files here -->
+    <Content Include="*.*;.\**\*" Exclude="$(MSBuildProjectFullPath);.\**\bin\**;.\**\obj\**;.\**\.vs\**" />
+    <!-- exclude this file from the generated package -->
+    <Content Remove="$(MSBuildProjectFullPath)"/>
+    <Compile Remove="**\*" />
+  </ItemGroup>
+</Project>

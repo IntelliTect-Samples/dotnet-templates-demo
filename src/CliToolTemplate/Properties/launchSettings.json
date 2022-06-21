@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MyCliToolTemplate": {
+      "commandName": "Project",
+      "commandLineArgs": "Subcommand --paramname 1234526 --verbose"
+    }
+  }
+}

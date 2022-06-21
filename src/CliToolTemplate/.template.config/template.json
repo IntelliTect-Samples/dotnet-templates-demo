@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Your Name Here",
+    "classifications": ["Console","Tool"],
+    "name": "mytemplate",
+    "defaultName": "MyTool",
+    "identity": "Some.Relatively.Unique.String.Here",
+    "shortName": "mytemplate",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "sourceName",
+    "preferNameDirectory": true,
+    "description": "description here"
+  }
